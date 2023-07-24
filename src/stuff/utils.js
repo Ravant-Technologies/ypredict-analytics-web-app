@@ -1,6 +1,6 @@
 
 import IndexedArray from 'arrayslicer'
-import Const from './constants.js'
+import Const, { ALPHABET } from './constants.js'
 
 export default {
 
@@ -321,6 +321,18 @@ export default {
             return event.original.defaultPrevented
         }
         return event.defaultPrevented
+    },
+
+    numberToAlphabet(number) {
+        let count = number;
+        let result = '';
+        let char;
+        do {
+            char = ALPHABET[count % ALPHABET.length];
+            result = char + result;
+            count = parseInt(count / ALPHABET.length);
+        } while (count > 0);
+        return result;
     },
 
     // WTF with modern web development
