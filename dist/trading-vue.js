@@ -6712,6 +6712,7 @@ RangeTool_component.options.__file = "src/components/overlays/RangeTool.vue"
       ctx.strokeStyle = this.color;
       ctx.beginPath();
       ctx.font = "16px sans-serif";
+      ctx.fillStyle = this.colorText;
       var layout = this.$props.layout;
       var i = this.data_index;
       var data = this.$props.data;
@@ -6780,6 +6781,9 @@ RangeTool_component.options.__file = "src/components/overlays/RangeTool.vue"
     // Don't connect separate parts if true
     skip_nan: function skip_nan() {
       return this.sett.skipNaN;
+    },
+    colorText: function colorText() {
+      return this.$props.colors.text;
     }
   },
   data: function data() {

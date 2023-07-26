@@ -37,6 +37,7 @@ export default {
             ctx.strokeStyle = this.color
             ctx.beginPath()
             ctx.font = "16px sans-serif";
+            ctx.fillStyle = this.colorText;
 
             const layout = this.$props.layout
             const i = this.data_index
@@ -103,6 +104,9 @@ export default {
         // Don't connect separate parts if true
         skip_nan() {
             return this.sett.skipNaN
+        },
+        colorText() {
+            return this.$props.colors.text;
         }
     },
     data() {
